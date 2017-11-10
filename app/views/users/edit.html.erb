@@ -1,0 +1,17 @@
+<h1>Edit user</h1>
+<% if @user.errors.any? %>
+ <ul>
+ <% @user.errors.full_messages.each do |err| %>
+   <li><%= err %></li>
+ <% end %>
+ </ul>
+<% end %>
+<%= form_for @user, { method: 'patch'} do |f| %>
+<%= f.label 'Username' %>
+<%= f.text_field :username %><br/>
+<%= f.label 'Password' %>
+<%= f.password_field :password %><br/>
+<%= f.label 'Email' %>
+<%= f.text_field :email %><br/>
+<%= f.submit 'Submit' %>
+<% end %>
