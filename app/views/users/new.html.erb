@@ -1,8 +1,28 @@
 <h1>Create user</h1>
+<%= form_for @user do |f| %>
+<%= f.label 'Username' %>
+<%= f.text_field :username %><br/>
+<%= f.label 'Password' %>
+<%= f.password_field :password %><br/>
+<%= f.label 'Email' %>
+<%= f.text_field :email, placeholder: 'example@example.com' %><br/>
+<%= f.submit 'Submit' %>
+<% end %>
+<%#= form_tag('/users', method: 'post') do %>
+<%#= label_tag(:username, 'Username') %>
+<%#= text_field_tag('user[username]') %><br/>
+<%#= label_tag(:password, 'Password') %>
+<%#= password_field_tag('user[password]') %><br/>
+<%#= label_tag(:email, 'Email') %>
+<%#= text_field_tag('user[email]') %><br/>
+<%#= submit_tag('Submit') %>
+<%# end %>
+<!--
 <form action='/users' method='post' accept-charset='UTF-8'>
-        <input type='hidden' name='authenticity_token', value='<%= form_authenticity_token %>'>
+        <input type='hidden' name='authenticity_token', value='<%#= form_authenticity_token %>'>
 	Username: <input type='text', name='user[username]'><br/>
 	Password: <input type='password', name='user[password]'><br/>
 	Email: <input type='text', name='user[email]'><br/>
 	<input type='submit' value='Submit'>
 </form>
+-->
